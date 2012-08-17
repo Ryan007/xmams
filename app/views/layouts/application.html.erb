@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Xmams</title>
+    <script type="text/javascript" src="<%= Xmams::Application.config.staticfile_server_url %>jquery/jquery_1.7.1.min.js"></script>
+    <link rel="stylesheet" href="<%= Xmams::Application.config.staticfile_server_url %>style.css" type="text/css"/>
+    <%= csrf_meta_tags %>
+</head>
+  <body>
+
+    <!-- 导航 -->
+    <div class="top-nav">
+      <div class="bd">
+        <div class="top-nav-info">
+          <% if user_signed_in? %>
+                      您好,<%= current_user.name %>,[我是<%= current_user.name %>]
+            <%= link_to "[退出]", destroy_user_session_path, :method => :delete %>
+          <% else %>
+            <%= link_to "[登录]", new_user_session_path, :method => :get %>
+          <% end %>
+        </div>
+
+
+        <div class="top-nav-items">
+          <ul>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 导航 end -->
+
+    <!-- devise的提示信息 start -->
+
+    <% if flash[:notice] %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="error"><%= flash[:error] %></p>
+    <% end %>
+    <% if flash[:success] %>
+      <p class="success"><%= flash[:success] %></p>
+    <% end %>
+    <!-- devise的提示信息 end -->
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <p>
+			Copyright &#169; 2012 <a href="http://www.xiaoma.com">小马过河国际教育</a>
+			|
+			Powered by <a href="http://rubyonrails.org/">Ruby On Rails</a>
+      </p>
+    </div>
+
+  </body>
+</html>
