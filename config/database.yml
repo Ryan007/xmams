@@ -15,8 +15,7 @@ development:
   database: xmams_development
   pool: 5
   username: root
-  password: ryan123
-  socket: /var/run/mysqld/mysqld.sock
+  password: 1q2w3e4r
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -28,15 +27,13 @@ test:
   database: xmams_test
   pool: 5
   username: root
-  password: ryan123
-  socket: /var/run/mysqld/mysqld.sock
+  password: 1q2w3e4r
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: xmams_production
+  database: xmams_db
   pool: 5
   username: root
-  password: ryan123
-  socket: /var/run/mysqld/mysqld.sock
+  password: 1q2w3e4r
