@@ -52,3 +52,4 @@ group :test do
   gem 'launchy'
   gem 'database_cleaner'
 end
+gem "capistrano", "~> 2.13.5"
